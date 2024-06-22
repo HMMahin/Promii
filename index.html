@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moveable Button with Dynamic GIF Change</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1 class="header_text">Let's Go Out For A Movie <br/>Promi!!</h1>
+      <h1 class="header_text">Plz Plz Plz......!!</h1>
+    </div>
+    <div class="gif_container">
+      <img id="gifImage" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnV0bXZ6bnMyenZsMWo2bnpyNWw3Z2liamU1dGJmcDA1cXJpZjY1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eHWUyxudOQGCulzFFR/giphy.gif" alt="Cute animated illustration">
+    </div>
+    <div class="buttons">
+      <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+      <button class="btn" id="noButton" onmouseover="changeGifAndMoveButton()">No</button>
+    </div>
+  </div>
+
+  <script>
+    function nextPage() {
+      window.location.href = "yes.html";
+    }
+
+    function changeGifAndMoveButton() {
+      // Change GIF
+      document.getElementById('gifImage').src = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2wzc2tudmE1bnYxeXVpcmR0dGkxc2Y2NzIzcGtkaXo1eWMyeTQ0biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lPM06f2zvk94jBAzlP/giphy.gif";
+      
+      // Move Button
+      var button = document.getElementById('noButton');
+      var x = Math.random() * (window.innerWidth - button.offsetWidth);
+      var y = Math.random() * (window.innerHeight - button.offsetHeight);
+      button.style.left = `${x}px`;
+      button.style.top = `${y}px`;
+    }
+
+    function resetGif() {
+      document.getElementById('gifImage').src = "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnV0bXZ6bnMyenZsMWo2bnpyNWw3Z2liamU1dGJmcDA1cXJpZjY1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eHWUyxudOQGCulzFFR/giphy.gif";
+    }
+  </script>
+</body>
+</html>
+
+
